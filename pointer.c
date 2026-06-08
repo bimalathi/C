@@ -7,10 +7,17 @@ void create(list *);
 
 void create(list *start)
 {
-    printf("enter value ");
-    scanf("%d",&start->data[0]);
-    start->count=0;
-
+    for(int i=0;i<100;i++)
+    {
+        
+     printf("enter value, put 0 to come out ");
+     scanf("%d",&start->data[i]);
+        if(start->data[i]==0)
+        {
+            break;
+        }
+     start->count=i;
+    }
 }
 int main()
 {
@@ -18,6 +25,6 @@ int main()
     int *ptr;
     list l;
    create(&l);
-   printf("value of count is %d",l.data[0]);
+   //printf("value of count is %d",l.data[0]);
 
 }
