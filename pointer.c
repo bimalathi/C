@@ -7,7 +7,7 @@ void create(list *);
 
 void create(list *start)
 {
-    for(i=0;i<100;i++)
+    for(int i=0;i<100;i++)
     {
         
      printf("enter value, put 0 to come out ");
