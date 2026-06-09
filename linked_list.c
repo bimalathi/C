@@ -11,11 +11,12 @@ list *create();
 void traverse(list *);
 list *insert(list *,int,int);
 int count(list *);
+list *delete(list *, int);
 
 
     int main()
     {       
-        int item=10,c,element,key;
+        int item=10,c,element,key,key1;
         //list *head=(list *)malloc(sizeof(list));
         list *head=create();
         traverse(head);   
@@ -29,6 +30,12 @@ int count(list *);
         head=insert(head,element,key); 
         traverse(head);
         printf("\nNo of elements - %d",c=count(head));
+        printf("\nenter a key value for deletion");
+        scanf("%d",&key1);
+        head=delete(head,key1);
+        traverse(head);
+        printf("\nNo of elements - %d",c=count(head));
+
         return 0;
     }
 
@@ -107,7 +114,35 @@ list *insert(list *head,int e,int key)
             printf("Key value not found");
                        
         }
-        
-     
+      
 }
 
+list *delete(list *head, int key)
+{
+    list *curr = head;
+    list *prev = NULL;
+
+    while(curr != NULL)
+    {
+        if(curr->data == key)
+        {
+            if(prev == NULL)      // first node
+            {
+                head = curr->next;
+            }
+            else
+            {
+                prev->next = curr->next;
+            }
+
+            free(curr);
+            return head;
+        }
+
+        prev = curr;
+        curr = curr->next;
+    }
+
+    printf("Key not found\n");
+    return head;
+}
