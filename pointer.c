@@ -52,7 +52,7 @@ void insert(list *start,int value,int pos)
 }
    
    
-   
+//main function   
 int main()
 {
     int value,pos;
