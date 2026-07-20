@@ -9,6 +9,7 @@ void create(list *);
 void insert(list *,int,int);
 void delete(list *,int);
 
+//create arraylist
 void create(list *start)
 {
     for(int i=0;i<100;i++)
@@ -24,6 +25,7 @@ void create(list *start)
      start->count=i+1;
     }
 }
+
 // insert value at position
 void insert(list *start,int value,int pos)
 {
