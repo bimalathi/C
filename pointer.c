@@ -63,6 +63,9 @@ void insert(list *start,int value,int pos)
     }
     start->count--;
  }     
+   
+   
+//main function   
 int main()
 {
     int value,pos;
